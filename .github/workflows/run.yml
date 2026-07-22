@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: actions/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v3 # 修正：這裡改成正確的 docker 官方套件
 
       - name: Build and Run Scrapper
         run: |

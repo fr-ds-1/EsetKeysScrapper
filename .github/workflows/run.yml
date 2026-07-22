@@ -17,7 +17,7 @@ jobs:
 
       - name: Compile C++ Scrapper
         run: |
-          g++ -O3 main.cpp src/*.cpp -Iinclude -lcurl -lcrypto -o eset_scraper
+          g++ -O3 *.cpp src/*.cpp -Iinclude -lcurl -lcrypto -o eset_scraper
 
       - name: Run Scrapper
         run: |

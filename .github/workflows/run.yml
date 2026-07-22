@@ -1,0 +1,19 @@
+name: Run Scrapper
+
+on:
+  workflow_dispatch: # 允許手動點擊執行
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: actions/setup-buildx-action@v3
+
+      - name: Build and Run Scrapper
+        run: |
+          docker build . -t esetkeysscrapper:latest
+          docker run --rm esetkeysscrapper:latest
